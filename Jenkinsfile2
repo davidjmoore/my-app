@@ -9,4 +9,7 @@ node{
   stage('Email Notification'){
    mail bcc: '', body: 'This is a test email for a completed job.', cc: '', from: '', replyTo: '', subject: 'jenkins training job', to: 'dmoore@plansource.com'
   }
+  stage('Slack Notification'){
+   slackSend baseUrl: 'https://hooks.ringcentral.com/webhook/v2/', channel: '#DevOps', tokenCredentialId: 'ee74b035-be62-4c54-add1-03fdc7df1323'
+  }
 }
